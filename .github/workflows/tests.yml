@@ -34,7 +34,7 @@ jobs:
       run: set -o pipefail && xcodebuild -project RxCombine.xcodeproj -scheme RxCombine-Package -enableCodeCoverage YES -sdk iphonesimulator -destination "name=iPhone 11" test | xcpretty -c -r html --output logs/iOS.html
     - uses: codecov/codecov-action@v1.0.5
       with:
-        token: 3116b02c-4202-4fe6-bde2-b148f6432f17
+        token: ${{ secrets.CODECOV_TOKEN }}
         name: RxCombine
     - uses: actions/upload-artifact@v1
       with:
